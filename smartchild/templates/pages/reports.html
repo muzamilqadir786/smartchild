@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <p>View Reports</p>
+       
+        {% for category in fee_categories %}
+        	<p>
+        		<a href="/reports/fee?type={{category.slug}}">{{category}}</a>
+        	</p>
+        {% endfor %}
+        
+        
+
+
+{% endblock content %}

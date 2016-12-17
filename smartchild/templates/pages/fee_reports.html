@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load apptags %}
+
+
+
+
+{% block content %}
+        <p>View Reports</p>
+
+        <p>
+        	<table>
+        		<th>
+			        {% for x in 13|times%}
+			       		{{ x|month_name }}
+			       	{% endfor %}
+		       	</th>
+	       	</table>
+
+<!-- 	       	{% for month in months %}
+	       		{{month.get_month_display}}
+	       	{% endfor %}
+     --> 
+       	</p>
+
+        {% for fee in fees %}
+        	<p>{{fee.student}} 
+        	{% if fee.month %} 
+        		{{fee.get_month_display}} 
+        	{% endif %}
+
+        	</p>
+        {% endfor %}
+        
+        
+
+
+{% endblock content %}
